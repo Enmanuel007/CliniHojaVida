@@ -17,4 +17,6 @@ class Ordenador extends Model
     'mac','ip','nombreequipo', 'licenciasaludips', 'seriesaludips','licenciaoffice','serieoffice','licenciasisconfig',
     'seriesisconfig', 'licenciasyngo', 'seriesyngo','licenciamanager', 'seriesismanager', 'lectorpdf', 'navegador', 'areaservicio',
     'fechadesignado', 'cargoresponsable', 'condicion'];
+
+    
 }
