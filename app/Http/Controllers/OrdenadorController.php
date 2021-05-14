@@ -97,7 +97,7 @@ class OrdenadorController extends Controller
         $ordenador->condicion= '1';
         $ordenador->save();
         return Redirect::to("computador");
-        ;
+        
     }
 
    

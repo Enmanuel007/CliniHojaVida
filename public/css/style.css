@@ -50,6 +50,7 @@
     border-collapse: collapse !important; }
     .table td,
     .table th {
+      
       background-color: #fff !important; }
   .table-bordered th,
   .table-bordered td {
@@ -78,9 +79,9 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.800rem;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 1.85;
   color: #151b1e;
   background-color: #e4e5e6; }
 
@@ -89,6 +90,7 @@ body {
 
 hr {
   box-sizing: content-box;
+  
   height: 0;
   overflow: visible; }
 
@@ -2746,7 +2748,9 @@ tbody.collapse.show {
 .card-body, .card-block {
   -ms-flex: 1 1 auto;
       flex: 1 1 auto;
-  padding: 1.25rem; }
+  padding: 1.25rem;
+  width: 40%;
+}
 
 .card-title {
   margin-bottom: 0.75rem; }
@@ -2849,6 +2853,7 @@ tbody.collapse.show {
 .breadcrumb {
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
+  width: 228.1%;
   list-style: none;
   background-color: #fff; }
   .breadcrumb::after {
@@ -7446,6 +7451,8 @@ base-chart.chart {
     padding-left: 7.5px; }
 
 .main .container-fluid {
+
+  width: 230%;
   padding: 0 30px; }
 
 .input-group-addon,

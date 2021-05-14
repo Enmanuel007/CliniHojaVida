@@ -4,6 +4,8 @@
 
 
 <main class="main">
+
+<div style="border:1px solid #F9F9F9 ;overflow-y:hidden;overflow-x:scroll; overflow: yellow;">
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active"><a href="/">BACKEND - SISTEMA - HOJAS DE VIDA</a></li>
@@ -36,11 +38,63 @@
                             <thead>
                                 <tr class="bg-primary">
                                    
-                                    <th>Computador</th>
-                                    <th>Descripción</th>
-                                    <th>Estado</th>
-                                    <th>Editar</th>
-                                    <th>Cambiar Estado</th>
+                                    <th>RESPONSABLE HV</th>
+                                    <th>NÚMERO ACTIVO</th>
+                                    <th> DIRECCIÓN MAC</th>
+                                    <th> DIRECCIÓN IP.</th>
+                                    <th>USUARIO EQUIPO</th>
+                                    <th>FECHA ELABORACIÓN</th>
+                                    <th>FECHA. COMPRA</th>
+                                    <th>TIPO EQUIPO</th>
+                                    <th>NOMBRE PROVEEDOR</th>
+                                    <th>MARCA EQUIPO</th>
+                                    <th>SERIAL EQUIPO</th>
+                                    <th>MODELO EQUIPO</th>
+                                    <th>COLOR EQUIPO</th>
+                                    <th>SERIAL ADAPTADOR</th>
+
+                                    <th>MARCA RAM</th>
+                                    <th>TIPO RAM</th>
+                                    <th>CAMACIDAD RAM</th>
+
+                                    <th>MARCA DISCO</th>
+                                    <th>SERIAL DISCO</th>
+                                    <th>CAPACIDAD DISCO</th>
+
+                                    <th>MARCA PROCESADOR</th>
+                                    <th>MODELO PROCESADOR</th>
+                                    <th>VELOCIDAD PROCESADOR</th>
+
+                                    <th>MARCA MONITOR</th>
+                                    <th>SERIAL MONITOR</th>
+                                    <th>MODELO MONITOR</th>
+                                    <th>ACTIVO MONITOR</th>
+
+                                    <th>LICENCIA SALUDIPS</th>
+                                    <th>SERIE SALUDIPS</th>
+
+                                    <th>LICENCIA SISCONFIG/th>
+                                    <th>SERIE SISCONFIG</th>
+
+                                    <th>LICENCIA SYNGO/th>
+                                    <th>SERIE SYNGO</th>
+
+                                    <th>LICENCIA MANAGER/th>
+                                    <th>SERIE MANAGER</th>
+
+                                    <th>LICENCIA OFFICE</th>
+                                    <th>SERIE OFFICE</th>
+
+
+                                    <th>LECTOR PDF</th>
+                                    <th>NAVEGADOR</th>
+                                    <th>ÁREA ASIGNADA</th>
+                                    <th>FECHA DESIGNADA</th>
+                                    <th>CARGO RESPONSABLE</th>
+                                    
+                                    <th>ESTADO</th>
+                                    <th>EDITAR</th>
+                                    <th>CAMBIAR ESTADO</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,11 +103,14 @@
 
                                 <tr>
                                     
-                                    <td>{{$compu->activos}}</td>
-                                    <td>{{$compu->fechaelaboracion}}</td>
                                     <td>{{$compu->responsable}}</td>
-                                    <td>{{$compu->tipoequipo}}</td>
+                                    <td>{{$compu->activos}}</td>
+                                    <td>{{$compu->mac}}</td>
+                                    <td>{{$compu->ip}}</td>
+                                    <td>{{$compu->nombreequipo}}</td>
+                                    <td>{{$compu->fechaelaboracion}}</td>
                                     <td>{{$compu->fechacompra}}</td>
+                                    <td>{{$compu->tipoequipo}}</td>                                    
                                     <td>{{$compu->proveedor}}</td>
                                     <td>{{$compu->marca}}</td>
                                     <td>{{$compu->serial}}</td>
@@ -68,6 +125,7 @@
                                     <td>{{$compu->marcadisco}}</td>
                                     <td>{{$compu->serialdisco}}</td>
                                     <td>{{$compu->capacidaddisco}}</td>
+
                                     <td>{{$compu->marcaprocesador}}</td>
                                     <td>{{$compu->modeloprocesador}}</td>
                                     <td>{{$compu->velocidadprocesador}}</td>
@@ -77,20 +135,21 @@
                                     <td>{{$compu->modelomonitor}}</td>
                                     <td>{{$compu->activomonitor}}</td>
 
-                                    <td>{{$compu->mac}}</td>
-                                    <td>{{$compu->ip}}</td>
-                                    <td>{{$compu->nombreequipo}}</td>
-
+                                                                        
                                     <td>{{$compu->licenciasaludips}}</td>
                                     <td>{{$compu->seriesaludips}}</td>
-                                    <td>{{$compu->licenciaoffice}}</td>
-                                    <td>{{$compu->serieoffice}}</td>
+                                    
                                     <td>{{$compu->licenciasisconfig}}</td>
                                     <td>{{$compu->seriesisconfig}}</td>
+
                                     <td>{{$compu->licenciasyngo}}</td>
                                     <td>{{$compu->seriesyngo}}</td>
+
                                     <td>{{$compu->licenciamanager}}</td>
                                     <td>{{$compu->seriesismanager}}</td>
+
+                                    <td>{{$compu->licenciaoffice}}</td>
+                                    <td>{{$compu->serieoffice}}</td>
 
                                     <td>{{$compu->lectorpdf}}</td>
                                     <td>{{$compu->navegador}}</td>
@@ -130,29 +189,9 @@
 
                             </tbody>
                         </table>
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Anterior</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">4</a>
-                                </li>
-                               
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Siguiente</a>
-                                </li>
-                            </ul>
-                        </nav>
+
+                        {{$ordenadores -> render() }}
+                        
                     </div>
                 </div>
                 <!-- Fin ejemplo de tabla Listado -->
@@ -211,7 +250,7 @@
             </div>
             <!--Fin del modal-->
            
-            
+            </div>
         </main>
 
 @endsection
