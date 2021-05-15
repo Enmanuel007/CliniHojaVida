@@ -23,7 +23,14 @@ class OrdenadorController extends Controller
         if($request){
 
             $sql=trim($request->get('buscarTexto'));
-            $ordenadores=DB::table('ordenadores')->where('mac','LIKE','%'.$sql.'%')
+            $ordenadores=DB::table('ordenadores')
+            ->where('mac','LIKE','%'.$sql.'%')
+            ->orwhere('ip','LIKE','%'.$sql.'%')
+            ->orwhere('activos','LIKE','%'.$sql.'%')
+            ->orwhere('nombreequipo','LIKE','%'.$sql.'%')
+            ->orwhere('areaservicio','LIKE','%'.$sql.'%')
+            ->orwhere('responsable','LIKE','%'.$sql.'%')
+            ->orwhere('serial','LIKE','%'.$sql.'%')
             ->orderBy('id','desc')
             ->paginate(7);
             return view('ordenador.index',["ordenadores"=>$ordenadores,"buscarTexto"=>$sql]);

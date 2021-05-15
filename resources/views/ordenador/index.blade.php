@@ -24,14 +24,13 @@
                     <div class="card-body">
                         <div class="form-group row">
                             <div class="col-md-6">
+                            {!!Form::open(array('url'=>'computador','method'=>'GET','autocomplete'=>'off','role'=>'search'))!!} 
                                 <div class="input-group">
-                                    <select class="form-control col-md-3">
-                            <option value="nombre">Computador</option>
-                                      <option value="descripcion">Descripción</option>
-                                    </select>
-                                    <input type="text" class="form-control" placeholder="Buscar texto">
+                                   
+                                    <input type="text" name="buscarTexto" class="form-control" placeholder="Buscar texto" value="{{$buscarTexto}}">
                                     <button type="submit"  class="btn btn-primary"><i class="fa fa-search"></i> Buscar</button>
                                 </div>
+                            {{Form::close()}}
                             </div>
                         </div>
                         <table class="table table-bordered table-striped table-sm">
