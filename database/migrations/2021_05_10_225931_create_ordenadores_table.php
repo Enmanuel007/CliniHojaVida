@@ -53,15 +53,15 @@ class CreateOrdenadoresTable extends Migration
             $table->string('nombreequipo',50)->nullable();
 
 
-            $table->boolean('licenciasaludips')->default(0);
+            $table->string('licenciasaludips',50)->nullable();
             $table->string('seriesaludips',50)->nullable();
-            $table->boolean('licenciaoffice')->default(0);
+            $table->string('licenciaoffice',50)->nullable();
             $table->string('serieoffice',50)->nullable();
-            $table->boolean('licenciasisconfig')->default(0);
+            $table->string('licenciasisconfig',50)->nullable();
             $table->string('seriesisconfig',50)->nullable();
-            $table->boolean('licenciasyngo')->default(0);
+            $table->string('licenciasyngo',50)->nullable();
             $table->string('seriesyngo',50)->nullable();
-            $table->boolean('licenciamanager')->default(0);
+            $table->string('licenciamanager',50)->nullable();
             $table->string('seriesismanager',50)->nullable();
 
            

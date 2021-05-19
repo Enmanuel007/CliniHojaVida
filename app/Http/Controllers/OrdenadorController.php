@@ -83,15 +83,15 @@ class OrdenadorController extends Controller
         $ordenador->ip= $request->ip;
         $ordenador->nombreequipo= $request->nombreequipo;
         
-        $ordenador->licenciasaludips= '0';
+        $ordenador->licenciasaludips= $request->licenciasaludips;
         $ordenador->seriesaludips= $request->seriesaludips;
-        $ordenador->licenciaoffice= '0';
+        $ordenador->licenciaoffice= $request->licenciaoffice;
         $ordenador->serieoffice= $request->serieoffice;
-        $ordenador->licenciasisconfig= '0';
+        $ordenador->licenciasisconfig= $request->licenciasisconfig;
         $ordenador->seriesisconfig= $request->seriesisconfig;
-        $ordenador->licenciasyngo= '0';
+        $ordenador->licenciasyngo= $request->licenciasyngo;
         $ordenador->seriesyngo= $request->seriesyngo;
-        $ordenador->licenciamanager= '0';
+        $ordenador->licenciamanager= $request->licenciamanager;
         $ordenador->seriesismanager= $request->seriesismanager;
         
         $ordenador->lectorpdf= $request->lectorpdf;
