@@ -25,7 +25,7 @@ class CreateOrdenadoresTable extends Migration
             $table->dateTime('fechacompra');
             $table->string('proveedor',50)->nullable();
             $table->string('marca',50)->nullable();
-            $table->string('serial',50)->nullable();
+            $table->string('serial',50)->unique();
             $table->string('modelo',50)->nullable();
             $table->string('color',50)->nullable();
             $table->string('serialadaptador',50)->nullable();

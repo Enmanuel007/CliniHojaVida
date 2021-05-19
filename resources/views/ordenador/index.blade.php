@@ -195,7 +195,7 @@
                 </div>
                 <!-- Fin ejemplo de tabla Listado -->
             </div>
-            <!--Inicio del modal agregar/actualizar-->
+            <!--Inicio del modal agregar-->
             <div class="modal fade" id="abrirmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog modal-primary modal-lg" role="document">
                     <div class="modal-content">
@@ -207,41 +207,13 @@
                         </div>
                        
                         <div class="modal-body">
-                            
-                            <div class="form-group row div-error">
+                            <form action="{{ route('ordenador.store') }}" method="post"  class="form-horizontal">
                                 
-                                <div class="text-center text-error">
-                                    
-                                    <div></div>
-
-                                </div>
-                            
-                            </div>
-                             
-
-                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-                                <div class="form-group row">
-                                    <label class="col-md-3 form-control-label" for="text-input">Computador</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="Mac de computador">
-                                       
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 form-control-label" for="email-input">Descripción</label>
-                                    <div class="col-md-9">
-                                    <input type="email" class="form-control" placeholder="Ingrese descripcion">
-                                    </div>
-                                </div>
-
-
+                                {{csrf_field()}}
+                                @include('ordenador.form')
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times fa-2x"></i> Cerrar</button>
-                            <button type="button" class="btn btn-success"><i class="fa fa-save fa-2x"></i> Guardar</button>
-                           
-                        </div>
+                        
                     </div>
                     <!-- /.modal-content -->
                 </div>
