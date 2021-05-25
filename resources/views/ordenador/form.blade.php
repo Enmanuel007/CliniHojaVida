@@ -14,6 +14,15 @@
     </div>
 </div>
 
+
+<div class="form-group row">
+    <label class="col-md-3 form-control-label" for="text-input">Mac</label>
+    <div class="col-md-9">
+        <input type="text" name="mac" id="mac" class="form-control" placeholder="28:45:B5:F16:AS:RJ" >
+    
+    </div>
+</div>
+
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Responsable HV</label>
     <div class="col-md-9">
@@ -57,7 +66,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Serial</label>
     <div class="col-md-9">
-        <input type="text" name="serial" id="serial" class="form-control" placeholder="" >
+        <input type="text" name="serial" id="serial" class="form-control" placeholder="m86flk" >
     
     </div>
 </div>
@@ -169,7 +178,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Serial Monitor</label>
     <div class="col-md-9">
-        <input type="text" name="serialmonitor" id="serialmonitor" class="form-control" placeholder="" >
+        <input type="text" name="serialmonitor" id="serialmonitor" class="form-control" placeholder="m45dgf" >
     
     </div>
 </div>
@@ -177,7 +186,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Modelo Monitor</label>
     <div class="col-md-9">
-        <input type="text" name="modelomonitor" id="modelomonitor" class="form-control" placeholder="" >
+        <input type="text" name="modelomonitor" id="modelomonitor" class="form-control" placeholder="m9jadfs" >
     
     </div>
 </div>
@@ -190,13 +199,7 @@
     </div>
 </div>
 
-<div class="form-group row">
-    <label class="col-md-3 form-control-label" for="text-input">Mac</label>
-    <div class="col-md-9">
-        <input type="text" name="mac" id="mac" class="form-control" placeholder="28:45:B5:F16:AS:RJ" >
-    
-    </div>
-</div>
+
 
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">IP</label>
@@ -225,7 +228,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Serie SaludIps</label>
     <div class="col-md-9">
-        <input type="text" name="seriesaludips" id="seriesaludips" class="form-control" placeholder="" >
+        <input type="text" name="seriesaludips" id="seriesaludips" class="form-control" placeholder="6GHHGJ65667U" >
     
     </div>
 </div>
@@ -233,7 +236,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Licencia Office</label>
     <div class="col-md-9">
-        <input type="text" name="licenciaoffice" id="licenciaoffice" class="form-control" placeholder="" >
+        <input type="text" name="licenciaoffice" id="licenciaoffice" class="form-control" placeholder="Si - No" >
     
     </div>
 </div>
@@ -241,7 +244,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Serie Office</label>
     <div class="col-md-9">
-        <input type="text" name="serieoffice" id="serieoffice" class="form-control" placeholder="" >
+        <input type="text" name="serieoffice" id="serieoffice" class="form-control" placeholder="87FTGHVBN5GFV" >
     
     </div>
 </div>
@@ -249,7 +252,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">licencia Sis Config</label>
     <div class="col-md-9">
-        <input type="text" name="licenciasisconfig" id="licenciasisconfig" class="form-control" placeholder="" >
+        <input type="text" name="licenciasisconfig" id="licenciasisconfig" class="form-control" placeholder="Si - No" >
     
     </div>
 </div>
@@ -257,7 +260,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Serie Sis Config</label>
     <div class="col-md-9">
-        <input type="text" name="seriesisconfig" id="seriesisconfig" class="form-control" placeholder="" >
+        <input type="text" name="seriesisconfig" id="seriesisconfig" class="form-control" placeholder="78TYTFGBBV6T" >
     
     </div>
 </div>
@@ -265,7 +268,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Licencia Syngo Plaza</label>
     <div class="col-md-9">
-        <input type="text" name="licenciasyngo" id="licenciasyngo" class="form-control" placeholder="" >
+        <input type="text" name="licenciasyngo" id="licenciasyngo" class="form-control" placeholder="Si - No" >
     
     </div>
 </div>
@@ -273,7 +276,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Serie Syngo Plaza</label>
     <div class="col-md-9">
-        <input type="text" name="seriesyngo" id="seriesyngo" class="form-control" placeholder="" >
+        <input type="text" name="seriesyngo" id="seriesyngo" class="form-control" placeholder="4EDRFCFTGH6T" >
     
     </div>
 </div>
@@ -281,7 +284,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Licencia Manager</label>
     <div class="col-md-9">
-        <input type="text" name="licenciamanager" id="licenciamanager" class="form-control" placeholder="" >
+        <input type="text" name="licenciamanager" id="licenciamanager" class="form-control" placeholder="Si - No" >
     
     </div>
 </div>
@@ -289,7 +292,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Serie Manager</label>
     <div class="col-md-9">
-        <input type="text" name="seriesismanager" id="seriesismanager" class="form-control" placeholder="" >
+        <input type="text" name="seriesismanager" id="seriesismanager" class="form-control" placeholder="3SEDFYRTFH6" >
     
     </div>
 </div>
@@ -330,14 +333,6 @@
     <label class="col-md-3 form-control-label" for="text-input">Cargo responsable</label>
     <div class="col-md-9">
         <input type="text" name="cargoresponsable" id="cargoresponsable" class="form-control" placeholder="enfermero jefe" >
-    
-    </div>
-</div>
-
-<div class="form-group row">
-    <label class="col-md-3 form-control-label" for="text-input">Condicion</label>
-    <div class="col-md-9">
-        <input type="text" name="condicion" id="condicion" class="form-control" placeholder="" >
     
     </div>
 </div>

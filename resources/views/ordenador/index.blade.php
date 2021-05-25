@@ -91,9 +91,9 @@
                                     <th>FECHA DESIGNADA</th>
                                     <th>CARGO RESPONSABLE</th>
                                     
-                                    <th>ESTADO</th>
                                     <th>EDITAR</th>
-                                    <th>CAMBIAR ESTADO</th>
+                                    <th>ELIMINAR</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -157,18 +157,45 @@
                                     <td>{{$compu->fechadesignado}}</td>
                                     <td>{{$compu->cargoresponsable}}</td>
 
-                                    <td>{{$compu->condicion}}</td>
                                     
-                                    <td>
-                                        <button type="button" class="btn btn-success btn-md">
                                     
-                                          <i class="fa fa-check fa-2x"></i> Activo
-                                        </button>
-                                       
-                                    </td>
-                                
+                                                                    
                                     <td>
-                                        <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#abrirmodal">
+                                        <button type="button" class="btn btn-info btn-md"
+
+                                             data-id_ordenador ="{{$compu->id}}"
+                                             data-responsable="{{$compu->responsable}}" data-activos="{{$compu->activos}}" 
+                                             data-mac="{{$compu->mac}}" data-ip="{{$compu->ip}}" 
+                                             data-nombreequipo="{{$compu->nombreequipo}}" data-fechaelaboracion="{{$compu->fechaelaboracion}}" 
+                                             data-fechacompra="{{$compu->fechacompra}}" data-tipoequipo="{{$compu->tipoequipo}}" 
+                                             data-proveedor="{{$compu->proveedor}}" data-marca="{{$compu->marca}}" 
+                                             data-serial="{{$compu->serial}}" data-modelo="{{$compu->modelo}}" 
+                                             data-color="{{$compu->color}}" data-serialadaptador="{{$compu->serialadaptador}}" 
+
+                                             data-marcaram="{{$compu->marcaram}}" data-tiporam="{{$compu->tiporam}}" 
+                                             data-capacidadram="{{$compu->capacidadram}}"
+                                            
+                                             data-marcadisco="{{$compu->marcadisco}}" 
+                                             data-serialdisco="{{$compu->serialdisco}}" data-capacidaddisco="{{$compu->capacidaddisco}}"
+
+                                             data-marcaprocesador="{{$compu->marcaprocesador}}" data-modeloprocesador="{{$compu->modeloprocesador}}" 
+                                             data-velocidadprocesador="{{$compu->velocidadprocesador}}" 
+                                             
+                                             data-marcamonitor="{{$compu->marcamonitor}}" data-serialmonitor="{{$compu->serialmonitor}}" 
+                                             data-modelomonitor="{{$compu->modelomonitor}}" data-activomonitor="{{$compu->activomonitor}}" 
+
+                                             data-licenciasaludips="{{$compu->licenciasaludips}}" data-seriesaludips="{{$compu->seriesaludips}}" 
+                                             data-licenciasisconfig="{{$compu->licenciasisconfig}}" data-seriesisconfig="{{$compu->seriesisconfig}}" 
+                                             data-licenciasyngo="{{$compu->licenciasyngo}}" data-seriesyngo="{{$compu->seriesyngo}}" 
+                                             data-licenciamanager="{{$compu->licenciamanager}}" data-seriesismanager="{{$compu->seriesismanager}}" 
+                                             data-licenciaoffice="{{$compu->licenciaoffice}}" data-serieoffice="{{$compu->serieoffice}}" 
+
+                                             data-lectorpdf="{{$compu->lectorpdf}}" data-navegador="{{$compu->navegador}}" 
+                                             data-areaservicio="{{$compu->areaservicio}}" data-fechadesignado="{{$compu->fechadesignado}}"
+                                             data-cargoresponsable="{{$compu->cargoresponsable}}"
+                                            
+
+                                             data-toggle="modal" data-target="#abrirmodalEditar">
 
                                           <i class="fa fa-edit fa-2x"></i> Editar
                                         </button> &nbsp;
@@ -207,7 +234,7 @@
                         </div>
                        
                         <div class="modal-body">
-                            <form action="{{ route('ordenador.store') }}" method="post"  class="form-horizontal">
+                            <form action="{{ route('computador.store') }}" method="post"  class="form-horizontal">
                                 
                                 {{csrf_field()}}
                                 @include('ordenador.form')
@@ -219,7 +246,42 @@
                 </div>
                 <!-- /.modal-dialog -->
             </div>
-            <!--Fin del modal-->
+            <!--Fin del modal -->
+
+
+
+
+
+            <!--Inicio del modal editar-->
+            <div class="modal fade" id="abrirmodalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-primary modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Editar Computador</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                       
+                        <div class="modal-body">
+                            <form action="{{ route('computador.update', 'test') }}" method="post"  class="form-horizontal">
+
+                                {{method_field('patch')}}                              
+                                {{csrf_field()}}
+
+                                <input type="hidden" id ="id_ordenador" name="id_ordenador" value = "">
+                                
+                                
+                                @include('ordenador.form')
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!--Fin del modal -->
            
             </div>
         </main>

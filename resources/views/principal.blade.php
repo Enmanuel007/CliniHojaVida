@@ -77,6 +77,137 @@
     <script src="{{asset('js/Chart.min.js')}}"></script>
     <!-- GenesisUI main scripts -->
     <script src="{{asset('js/template.js')}}"></script>
+
+
+    <script>
+    
+        /*EDITAR ORDENADOR EN VENTANA MODAL*/
+        $('#abrirmodalEditar').on('show.bs.modal', function (event) {
+        
+        //console.log('modal abierto');
+        
+        var button = $(event.relatedTarget) 
+
+        
+        var responsable_modal_editar = button.data('responsable')
+        var activos_modal_editar = button.data('activos')
+
+        var mac_modal_editar = button.data('mac')
+        var ip_modal_editar = button.data('ip')
+        var nombreequipo_modal_editar = button.data('nombreequipo')
+        var fechaelaboracion_modal_editar = button.data('fechaelaboracion')
+        var fechacompra_modal_editar = button.data('fechacompra')
+        var tipoequipo_modal_editar = button.data('tipoequipo')
+        var proveedor_modal_editar = button.data('proveedor')
+        var marca_modal_editar = button.data('marca')
+        var serial_modal_editar = button.data('serial')
+        
+        var modelo_modal_editar = button.data('modelo')
+        var color_modal_editar = button.data('color')
+        var serialadaptador_modal_editar = button.data('serialadaptador')
+        
+        var marcaram_modal_editar = button.data('marcaram')
+        var tiporam_modal_editar = button.data('tiporam')
+        var capacidadram_modal_editar = button.data('capacidadram')
+
+        var marcadisco_modal_editar = button.data('marcadisco')
+        var serialdisco_modal_editar = button.data('serialdisco')
+        var capacidaddisco_modal_editar = button.data('capacidaddisco')
+
+        var marcaprocesador_modal_editar = button.data('marcaprocesador')
+        var modeloprocesador_modal_editar = button.data('modeloprocesador')
+        var velocidadprocesador_modal_editar = button.data('velocidadprocesador')
+
+        var marcamonitor_modal_editar = button.data('marcamonitor')
+        var serialmonitor_modal_editar = button.data('serialmonitor')
+        var modelomonitor_modal_editar = button.data('modelomonitor')
+        var activomonitor_modal_editar = button.data('activomonitor')     
+              
+        var licenciasaludips_modal_editar = button.data('licenciasaludips')
+        var seriesaludips_modal_editar = button.data('seriesaludips')
+        var licenciasisconfig_modal_editar = button.data('licenciasisconfig')
+        var seriesisconfig_modal_editar = button.data('seriesisconfig')
+        var licenciasyngo_modal_editar = button.data('licenciasyngo')
+        var seriesyngo_modal_editar = button.data('seriesyngo')
+        var licenciamanager_modal_editar = button.data('licenciamanager')
+        var seriesismanager_modal_editar = button.data('seriesismanager')
+        var licenciaoffice_modal_editar = button.data('licenciaoffice')
+        var serieoffice_modal_editar = button.data('serieoffice')
+    
+        var lectorpdf_modal_editar = button.data('lectorpdf')
+        var navegador_modal_editar = button.data('navegador')
+
+        var areaservicio_modal_editar = button.data('areaservicio')
+        var fechadesignado_modal_editar = button.data('fechadesignado')
+        var cargoresponsable_modal_editar = button.data('cargoresponsable')   
+
+        var id_ordenador = button.data('id_ordenador')
+        
+        var modal = $(this)
+        // modal.find('.modal-title').text('New message to ' + recipient)
+       
+        modal.find('.modal-body #responsable').val(responsable_modal_editar);
+        modal.find('.modal-body #activos').val(activos_modal_editar);
+        
+        modal.find('.modal-body #mac').val(mac_modal_editar);
+        modal.find('.modal-body #ip').val(ip_modal_editar);
+        modal.find('.modal-body #nombreequipo').val(nombreequipo_modal_editar);
+        modal.find('.modal-body #fechaelaboracion').val(fechaelaboracion_modal_editar);
+        modal.find('.modal-body #fechacompra').val(fechacompra_modal_editar);
+        modal.find('.modal-body #tipoequipo').val(tipoequipo_modal_editar);
+        modal.find('.modal-body #proveedor').val(proveedor_modal_editar);
+        modal.find('.modal-body #marca').val(marca_modal_editar);
+        modal.find('.modal-body #serial').val(serial_modal_editar);
+        
+        modal.find('.modal-body #modelo').val(modelo_modal_editar);
+        modal.find('.modal-body #color').val(color_modal_editar);
+        modal.find('.modal-body #serialadaptador').val(serialadaptador_modal_editar);
+        
+
+        modal.find('.modal-body #marcaram').val(marcaram_modal_editar);
+        modal.find('.modal-body #tiporam').val(tiporam_modal_editar);
+        modal.find('.modal-body #capacidadram').val(capacidadram_modal_editar);
+        
+        modal.find('.modal-body #marcadisco').val(marcadisco_modal_editar);
+        modal.find('.modal-body #serialdisco').val(serialdisco_modal_editar);
+        modal.find('.modal-body #capacidaddisco').val(capacidaddisco_modal_editar);
+
+        modal.find('.modal-body #marcaprocesador').val(marcaprocesador_modal_editar);
+        modal.find('.modal-body #modeloprocesador').val(modeloprocesador_modal_editar);
+        modal.find('.modal-body #velocidadprocesador').val(velocidadprocesador_modal_editar);
+
+        modal.find('.modal-body #marcamonitor').val(marcamonitor_modal_editar);
+        modal.find('.modal-body #serialmonitor').val(serialmonitor_modal_editar);
+        modal.find('.modal-body #modelomonitor').val(modelomonitor_modal_editar);
+        modal.find('.modal-body #activomonitor').val(activomonitor_modal_editar);
+        
+        modal.find('.modal-body #licenciasaludips').val(licenciasaludips_modal_editar);
+        modal.find('.modal-body #seriesaludips').val(seriesaludips_modal_editar);
+        modal.find('.modal-body #licenciasisconfig').val(licenciasisconfig_modal_editar);
+        modal.find('.modal-body #seriesisconfig').val(seriesisconfig_modal_editar);
+        modal.find('.modal-body #licenciasyngo').val(licenciasyngo_modal_editar);
+        modal.find('.modal-body #seriesyngo').val(seriesyngo_modal_editar);
+        modal.find('.modal-body #licenciamanager').val(licenciamanager_modal_editar);
+        modal.find('.modal-body #seriesismanager').val(seriesismanager_modal_editar);
+        modal.find('.modal-body #licenciaoffice').val(licenciaoffice_modal_editar);
+        modal.find('.modal-body #serieoffice').val(serieoffice_modal_editar);
+
+        
+        modal.find('.modal-body #lectorpdf').val(lectorpdf_modal_editar);
+        modal.find('.modal-body #navegador').val(navegador_modal_editar);
+
+        modal.find('.modal-body #areaservicio').val(areaservicio_modal_editar);
+        modal.find('.modal-body #fechadesignado').val(fechadesignado_modal_editar);
+        modal.find('.modal-body #cargoresponsable').val(cargoresponsable_modal_editar);
+
+        modal.find('.modal-body #id_ordenador').val(id_ordenador);
+        })
+
+
+
+    </script>
+
+
 </body>
 
 </html>

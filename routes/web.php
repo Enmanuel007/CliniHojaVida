@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('principal');
 });
 
-Route::resource('ordenador', 'OrdenadorController');
+Route::resource('computador', 'OrdenadorController');
 
  
 

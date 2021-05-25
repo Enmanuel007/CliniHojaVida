@@ -19,15 +19,16 @@ class CreateOrdenadoresTable extends Migration
 
             $table->string('activos',50)->unique();  
                       
-            $table->dateTime('fechaelaboracion');
+            $table->date('fechaelaboracion')->nullable();
             $table->string('responsable',50)->nullable();
             $table->string('tipoequipo',50)->nullable();
-            $table->dateTime('fechacompra');
+            $table->date('fechacompra')->nullable();
             $table->string('proveedor',50)->nullable();
             $table->string('marca',50)->nullable();
             $table->string('serial',50)->unique();
             $table->string('modelo',50)->nullable();
             $table->string('color',50)->nullable();
+            
             $table->string('serialadaptador',50)->nullable();
 
           
@@ -69,7 +70,7 @@ class CreateOrdenadoresTable extends Migration
             $table->string('navegador',50)->nullable();
 
             $table->string('areaservicio',50)->nullable();
-            $table->dateTime('fechadesignado');
+            $table->date('fechadesignado')->nullable();
             $table->string('cargoresponsable',50)->nullable();
 
             $table->boolean('condicion')->default(1);
