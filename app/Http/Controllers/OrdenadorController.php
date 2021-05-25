@@ -187,15 +187,15 @@ class OrdenadorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(Request $request, $id)
     {
         // ELIMINAR REGISTROS
 
         
-        $ordenador= Ordenador::findOrFail($request->id_ordenador);
-        $ordenador->activos= $request->activos;
-        $ordenador->condicion = 'Anulado';
-        $ordenador->save();
+        $ordenador= Ordenador::destroy($request->id_ordenador);
+        
+               
+
         return Redirect::to('computador');
     }
     

@@ -203,10 +203,19 @@
 
                                     <td>
 
+                                    @if($compu->id)
+
                                         
-                                        <button type="button" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-lock fa-2x"></i> Desactivar
+                                        <button type="button" class="btn btn-danger btn-sm" 
+                                        
+                                        
+                                            data-id_ordenador ="{{$compu->id}}"
+                                             
+                                            data-toggle="modal" data-target="#abrirmodalEliminar">
+                                            <i class="fa fa-lock fa-2x"></i> Eliminar
                                         </button>
+
+                                    @endif
                                        
                                     </td>
                                 </tr>
@@ -284,6 +293,53 @@
             <!--Fin del modal -->
            
             </div>
-        </main>
+            
+        
+
+        <!--Inicio del modal Eliminar-->
+        <div class="modal fade" id="abrirmodalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-primary modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Eliminar Computador</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                       
+                        <div class="modal-body">
+                             
+
+                            <form action="{{route('computador.destroy','test')}}" method="post" class="form-horizontal">
+                                
+                                {{method_field('delete')}}
+                                {{csrf_field()}}
+
+                                <input type="hidden" id="id_ordenador" name="id_ordenador" value="">
+                                
+                                <p>¿Estás seguro de eliminar el equipo?</p>
+        
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times fa-2x"></i>Cerrar</button>
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-lock fa-2x"></i>Aceptar</button>
+                                </div>
+
+
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!--Fin del modal-->
+    
+    
+    
+    
+    
+    </main>
 
 @endsection

@@ -205,6 +205,27 @@
 
 
 
+        /******************************************************/
+        /*INICIO ventana modal para ELIMINAR un computador*/
+        
+        $('#abrirmodalEliminar').on('show.bs.modal', function (event) {
+        
+        //console.log('modal abierto');
+        
+        var button = $(event.relatedTarget) 
+        var id_ordenador = button.data('id_ordenador')
+        var modal = $(this)
+        // modal.find('.modal-title').text('New message to ' + recipient)
+        
+        modal.find('.modal-body #id_ordenador').val(id_ordenador);
+        })
+         
+        /*FIN ventana modal para ELIMINAR un computador*/
+
+
+
+
+
     </script>
 
 
