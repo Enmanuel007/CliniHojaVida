@@ -25,7 +25,7 @@ class CreateOrdenadoresTable extends Migration
             $table->date('fechacompra')->nullable();
             $table->string('proveedor',50)->nullable();
             $table->string('marca',50)->nullable();
-            $table->string('serial',50)->unique();
+            $table->string('serial',50)->nullable();
             $table->string('modelo',50)->nullable();
             $table->string('color',50)->nullable();
             
@@ -49,7 +49,7 @@ class CreateOrdenadoresTable extends Migration
             $table->string('modelomonitor',50)->nullable();
             $table->string('activomonitor',50)->nullable();
 
-            $table->string('mac',50)->unique();
+            $table->string('mac',50)->nullable();
             $table->string('ip',50)->nullable();
             $table->string('nombreequipo',50)->nullable();
 

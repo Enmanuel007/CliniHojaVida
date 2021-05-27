@@ -15,10 +15,10 @@
                 <div class="card">
                     <div class="card-header">
 
-                       <h2>Listado de Computadores</h2><br/>
+                       <h2>Listado de Equipo</h2><br/>
                       
                         <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#abrirmodal">
-                            <i class="fa fa-plus fa-2x"></i>&nbsp;&nbsp;Agregar Computador
+                            <i class="fa fa-plus fa-2x"></i>&nbsp;&nbsp;Agregar Equipo
                         </button>
                     </div>
                     <div class="card-body">
@@ -37,8 +37,8 @@
                             <thead>
                                 <tr class="bg-primary">
                                    
-                                    <th>RESPONSABLE HV</th>
                                     <th>NÚMERO ACTIVO</th>
+                                    <th>RESPONSABLE HV</th>
                                     <th> DIRECCIÓN MAC</th>
                                     <th> DIRECCIÓN IP.</th>
                                     <th>USUARIO EQUIPO</th>
@@ -72,13 +72,13 @@
                                     <th>LICENCIA SALUDIPS</th>
                                     <th>SERIE SALUDIPS</th>
 
-                                    <th>LICENCIA SISCONFIG/th>
+                                    <th>LICENCIA SISCONFIG</th>
                                     <th>SERIE SISCONFIG</th>
 
-                                    <th>LICENCIA SYNGO/th>
+                                    <th>LICENCIA SYNGO</th>
                                     <th>SERIE SYNGO</th>
 
-                                    <th>LICENCIA MANAGER/th>
+                                    <th>LICENCIA MANAGER</th>
                                     <th>SERIE MANAGER</th>
 
                                     <th>LICENCIA OFFICE</th>
@@ -91,8 +91,9 @@
                                     <th>FECHA DESIGNADA</th>
                                     <th>CARGO RESPONSABLE</th>
                                     
+                                    <th>ACTIVO</th>
                                     <th>EDITAR</th>
-                                    <th>ELIMINAR</th>
+                                    <th>DESACTIVAR</th>
                                     
                                 </tr>
                             </thead>
@@ -102,8 +103,8 @@
 
                                 <tr>
                                     
-                                    <td>{{$compu->responsable}}</td>
                                     <td>{{$compu->activos}}</td>
+                                    <td>{{$compu->responsable}}</td>
                                     <td>{{$compu->mac}}</td>
                                     <td>{{$compu->ip}}</td>
                                     <td>{{$compu->nombreequipo}}</td>
@@ -158,13 +159,30 @@
                                     <td>{{$compu->cargoresponsable}}</td>
 
                                     
+                                   @if($compu->condicion=="1")
+                                   <td>
+                                        <button type="button" class="btn btn-success btn-md">
                                     
+                                          <i class="fa fa-check fa-2x"></i> Activo
+                                        </button>
+
+                                      @else
+                                         <button type="button" class="btn btn-danger btn-md">
+                                    
+                                         <i class="fa fa-check fa-2x"></i> Desactivado
+                                         </button>
+
+                                      @endif
+                                        
+                                       
+                                    </td> 
                                                                     
                                     <td>
+                                        
                                         <button type="button" class="btn btn-info btn-md"
 
                                              data-id_ordenador ="{{$compu->id}}"
-                                             data-responsable="{{$compu->responsable}}" data-activos="{{$compu->activos}}" 
+                                             data-activos="{{$compu->activos}}" data-responsable="{{$compu->responsable}}" 
                                              data-mac="{{$compu->mac}}" data-ip="{{$compu->ip}}" 
                                              data-nombreequipo="{{$compu->nombreequipo}}" data-fechaelaboracion="{{$compu->fechaelaboracion}}" 
                                              data-fechacompra="{{$compu->fechacompra}}" data-tipoequipo="{{$compu->tipoequipo}}" 
@@ -203,19 +221,19 @@
 
                                     <td>
 
-                                    @if($compu->id)
+                                    @if($compu->condicion)
 
-                                        
-                                        <button type="button" class="btn btn-danger btn-sm" 
-                                        
-                                        
-                                            data-id_ordenador ="{{$compu->id}}"
-                                             
-                                            data-toggle="modal" data-target="#abrirmodalEliminar">
-                                            <i class="fa fa-lock fa-2x"></i> Eliminar
+                                        <button type="button" class="btn btn-danger btn-sm" data-id_categoria="{{$compu->id}}" data-toggle="modal" data-target="#abrirmodalEliminar">
+                                            <i class="fa fa-times fa-2x"></i> Desactivar
                                         </button>
 
-                                    @endif
+                                        @else
+
+                                        <button type="button" class="btn btn-success btn-sm" data-id_categoria="{{$compu->id}}" data-toggle="modal" data-target="#abrirmodalEliminar">
+                                            <i class="fa fa-lock fa-2x"></i> Activar
+                                        </button>
+
+                                        @endif
                                        
                                     </td>
                                 </tr>
@@ -225,25 +243,25 @@
                             </tbody>
                         </table>
 
-                        {{$ordenadores -> render() }}
+                       <!--  {{$ordenadores -> render() }}-->
                         
                     </div>
                 </div>
-                <!-- Fin ejemplo de tabla Listado -->
+                <!-- Fin ejemplo de tabla Listado                  abrirmodalEliminar-->
             </div>
             <!--Inicio del modal agregar-->
             <div class="modal fade" id="abrirmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog modal-primary modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Agregar Computador</h4>
+                            <h4 class="modal-title">Agregar Equipo</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">×</span>
                             </button>
                         </div>
                        
                         <div class="modal-body">
-                            <form action="{{ route('computador.store') }}" method="post"  class="form-horizontal">
+                            <form action="{{ route('equipo.store') }}" method="post"  class="form-horizontal">
                                 
                                 {{csrf_field()}}
                                 @include('ordenador.form')
@@ -266,14 +284,14 @@
                 <div class="modal-dialog modal-primary modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Editar Computador</h4>
+                            <h4 class="modal-title">Editar Equipo</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">×</span>
                             </button>
                         </div>
                        
                         <div class="modal-body">
-                            <form action="{{ route('computador.update', 'test') }}" method="post"  class="form-horizontal">
+                            <form action="{{ route('equipo.update', 'test') }}" method="post"  class="form-horizontal">
 
                                 {{method_field('patch')}}                              
                                 {{csrf_field()}}
@@ -296,12 +314,12 @@
             
         
 
-        <!--Inicio del modal Eliminar-->
+        <!--Inicio del modal Cambiar Estado-->
         <div class="modal fade" id="abrirmodalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-                <div class="modal-dialog modal-primary modal-lg" role="document">
+                <div class="modal-dialog modal-danger modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Eliminar Computador</h4>
+                            <h4 class="modal-title">Cambiar Estado del Equipo</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">×</span>
                             </button>
@@ -310,14 +328,14 @@
                         <div class="modal-body">
                              
 
-                            <form action="{{route('computador.destroy','test')}}" method="post" class="form-horizontal">
+                            <form action="{{route('equipo.destroy','test')}}" method="post" class="form-horizontal">
                                 
                                 {{method_field('delete')}}
                                 {{csrf_field()}}
 
                                 <input type="hidden" id="id_ordenador" name="id_ordenador" value="">
                                 
-                                <p>¿Estás seguro de eliminar el equipo?</p>
+                                <p>¿Estás seguro de cambiar el estado?</p>
         
 
                                 <div class="modal-footer">

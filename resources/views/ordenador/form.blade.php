@@ -1,25 +1,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Activo</label>
     <div class="col-md-9">
-        <input type="text" name="activos" id="activos" class="form-control" placeholder="0000" >
-    
-    </div>
-</div>
-
-<div class="form-group row">
-    <label class="col-md-3 form-control-label" for="text-input">Fecha de Elaboración</label>
-    <div class="col-md-9">
-        <input type="date" name="fechaelaboracion" id="fechaelaboracion" class="form-control" placeholder="01/08/2021" >
-    
-    </div>
-</div>
-
-
-<div class="form-group row">
-    <label class="col-md-3 form-control-label" for="text-input">Mac</label>
-    <div class="col-md-9">
-        <input type="text" name="mac" id="mac" class="form-control" placeholder="28:45:B5:F16:AS:RJ" >
-    
+        <input type="text" name="activos" id="activos" class="form-control" placeholder="0000" required pattern="^[0-9\s]{0,30}$" title ="ERROR!!! Ingrese caracteres numéricos">
     </div>
 </div>
 
@@ -32,12 +14,39 @@
 </div>
 
 <div class="form-group row">
-    <label class="col-md-3 form-control-label" for="text-input">Tipo de Equipo</label>
+    <label class="col-md-3 form-control-label" for="text-input">Mac</label>
     <div class="col-md-9">
-        <input type="text" name="tipoequipo" id="tipoequipo" class="form-control" placeholder="Portátil" >
+        <input type="text" name="mac" id="mac" class="form-control" placeholder="28-45-B5-F16-AS-RJ" >
     
     </div>
 </div>
+
+<div class="form-group row">
+    <label class="col-md-3 form-control-label" for="text-input">IP</label>
+    <div class="col-md-9">
+        <input type="text" name="ip" id="ip" class="form-control" placeholder="172.168.3.13" >
+    
+    </div>
+</div>
+
+
+<div class="form-group row">
+    <label class="col-md-3 form-control-label" for="text-input">Nombre del equipo</label>
+    <div class="col-md-9">
+        <input type="text" name="nombreequipo" id="nombreequipo" class="form-control" placeholder="Consultorio 3" >
+    
+    </div>
+</div>
+
+
+<div class="form-group row">
+    <label class="col-md-3 form-control-label" for="text-input">Fecha de Elaboración</label>
+    <div class="col-md-9">
+        <input type="date" name="fechaelaboracion" id="fechaelaboracion" class="form-control" placeholder="01/08/2021" >
+    
+    </div>
+</div>
+
 
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Fecha Compra</label>
@@ -46,6 +55,17 @@
     
     </div>
 </div>
+
+
+<div class="form-group row">
+    <label class="col-md-3 form-control-label" for="text-input">Tipo de Equipo</label>
+    <div class="col-md-9">
+        <input type="text" name="tipoequipo" id="tipoequipo" class="form-control" placeholder="Portátil" >
+    
+    </div>
+</div>
+
+
 
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Proveedor</label>
@@ -175,6 +195,7 @@
     </div>
 </div>
 
+
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Serial Monitor</label>
     <div class="col-md-9">
@@ -182,6 +203,8 @@
     
     </div>
 </div>
+
+
 
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Modelo Monitor</label>
@@ -201,21 +224,6 @@
 
 
 
-<div class="form-group row">
-    <label class="col-md-3 form-control-label" for="text-input">IP</label>
-    <div class="col-md-9">
-        <input type="text" name="ip" id="ip" class="form-control" placeholder="172.168.3.13" >
-    
-    </div>
-</div>
-
-<div class="form-group row">
-    <label class="col-md-3 form-control-label" for="text-input">Nombre del equipo</label>
-    <div class="col-md-9">
-        <input type="text" name="nombreequipo" id="nombreequipo" class="form-control" placeholder="Consultorio 3" >
-    
-    </div>
-</div>
 
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">licencia SaludIps</label>
@@ -233,21 +241,7 @@
     </div>
 </div>
 
-<div class="form-group row">
-    <label class="col-md-3 form-control-label" for="text-input">Licencia Office</label>
-    <div class="col-md-9">
-        <input type="text" name="licenciaoffice" id="licenciaoffice" class="form-control" placeholder="Si - No" >
-    
-    </div>
-</div>
 
-<div class="form-group row">
-    <label class="col-md-3 form-control-label" for="text-input">Serie Office</label>
-    <div class="col-md-9">
-        <input type="text" name="serieoffice" id="serieoffice" class="form-control" placeholder="87FTGHVBN5GFV" >
-    
-    </div>
-</div>
 
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">licencia Sis Config</label>
@@ -264,6 +258,7 @@
     
     </div>
 </div>
+
 
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Licencia Syngo Plaza</label>
@@ -298,9 +293,27 @@
 </div>
 
 <div class="form-group row">
+    <label class="col-md-3 form-control-label" for="text-input">Licencia Office</label>
+    <div class="col-md-9">
+        <input type="text" name="licenciaoffice" id="licenciaoffice" class="form-control" placeholder="Si - No" >
+    
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-md-3 form-control-label" for="text-input">Serie Office</label>
+    <div class="col-md-9">
+        <input type="text" name="serieoffice" id="serieoffice" class="form-control" placeholder="87FTGHVBN5GFV" >
+    
+    </div>
+</div>
+
+
+
+<div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Lector PDF</label>
     <div class="col-md-9">
-        <input type="text" name="lectorpdf" id="lectorpdf" class="form-control" placeholder="" >
+        <input type="text" name="lectorpdf" id="lectorpdf" class="form-control" placeholder="Libre" >
     
     </div>
 </div>
@@ -308,13 +321,13 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Navegador</label>
     <div class="col-md-9">
-        <input type="text" name="navegador" id="navegador" class="form-control" placeholder="" >
+        <input type="text" name="navegador" id="navegador" class="form-control" placeholder="Libre" >
     
     </div>
 </div>
 
 <div class="form-group row">
-    <label class="col-md-3 form-control-label" for="text-input">Area Servicio</label>
+    <label class="col-md-3 form-control-label" for="text-input">Area Asignada</label>
     <div class="col-md-9">
         <input type="text" name="areaservicio" id="areaservicio" class="form-control" placeholder="uci 7 lado C" >
     
@@ -324,7 +337,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="text-input">Fecha designada</label>
     <div class="col-md-9">
-        <input type="date" name="fechadesignado" id="fechadesignado" class="form-control" placeholder="" >
+        <input type="date" name="fechadesignado" id="fechadesignado" class="form-control" placeholder="01/08/2021" >
     
     </div>
 </div>

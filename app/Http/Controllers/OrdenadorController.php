@@ -32,7 +32,7 @@ class OrdenadorController extends Controller
             ->orwhere('responsable','LIKE','%'.$sql.'%')
             ->orwhere('serial','LIKE','%'.$sql.'%')
             ->orderBy('id','desc')
-            ->paginate(3);
+            ->paginate(7);
             return view('ordenador.index',["ordenadores"=>$ordenadores,"buscarTexto"=>$sql]);
             //return $ordenadores;
         }
@@ -103,7 +103,7 @@ class OrdenadorController extends Controller
         
         $ordenador->condicion= '1';
         $ordenador->save();
-        return Redirect::to("computador");
+        return Redirect::to("equipo");
         
     }
 
@@ -173,11 +173,11 @@ class OrdenadorController extends Controller
         $ordenador->areaservicio= $request->areaservicio;
         $ordenador->fechadesignado= $request->fechadesignado;
         $ordenador->cargoresponsable= $request->cargoresponsable;
-        
+        $ordenador->condicion= '1';        
         
         
         $ordenador->save();
-        return Redirect::to("computador");
+        return Redirect::to("equipo");
 
     }
 
@@ -187,16 +187,24 @@ class OrdenadorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id)
+    public function destroy(Request $request)
     {
-        // ELIMINAR REGISTROS
+        // 
+            $categoria= Ordenador::findOrFail($request->id_ordenador);
 
+            if($ordenador->condicion=="1"){
+                
+                $ordenador->condicion= '0';
+                $ordenador->save();
+                return Redirect::to("equipo");
         
-        $ordenador= Ordenador::destroy($request->id_ordenador);
-        
-               
+            } else{
 
-        return Redirect::to('computador');
+                $categoria->condicion= '1';
+                $categoria->save();
+                return Redirect::to("equipo");
+
+            }
     }
     
     

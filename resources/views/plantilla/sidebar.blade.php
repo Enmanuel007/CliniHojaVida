@@ -14,17 +14,23 @@
                     </li>
                                         
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-list"></i> Computador</a>
+                     <a class="nav-link" href="{{url('equipo')}}" onclick="event.preventDefault(); document.getElementById('ordenador-form').submit();"><i class="fa fa-list"></i> Equipos</a>
+                    
+                     <form id="ordenador-form" action="{{url('equipo')}}" method="GET" style="display: none;">
+                        {{csrf_field()}} 
+                     </form>
+                    
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-list"></i> Impresoras</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-list"></i> Televisores</a>
-                    </li>                       
+                    <a class="nav-link" href="{{url('impresora')}}" onclick="event.preventDefault(); document.getElementById('impresora-form').submit();"><i class="fa fa-list"></i> Impresoras</a>
                     
+                    <form id="impresora-form" action="{{url('impresora')}}" method="GET" style="display: none;">
+                       {{csrf_field()}} 
+                    </form>
+                    </li>
+x
+                                        
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-user"></i> Usuarios</a>
                     </li>
