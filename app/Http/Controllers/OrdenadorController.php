@@ -190,7 +190,7 @@ class OrdenadorController extends Controller
     public function destroy(Request $request)
     {
         // 
-            $categoria= Ordenador::findOrFail($request->id_ordenador);
+            $ordenador= Ordenador::findOrFail($request->id_ordenador);
 
             if($ordenador->condicion=="1"){
                 
@@ -200,8 +200,8 @@ class OrdenadorController extends Controller
         
             } else{
 
-                $categoria->condicion= '1';
-                $categoria->save();
+                $ordenador->condicion= '1';
+                $ordenador->save();
                 return Redirect::to("equipo");
 
             }

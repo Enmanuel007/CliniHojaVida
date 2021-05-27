@@ -91,9 +91,9 @@
                                     <th>FECHA DESIGNADA</th>
                                     <th>CARGO RESPONSABLE</th>
                                     
-                                    <th>ACTIVO</th>
-                                    <th>EDITAR</th>
-                                    <th>DESACTIVAR</th>
+                                    <th>ESTADO EQUIPO</th>
+                                    <th>EDITAR EQUIPO</th>
+                                    <th>CAMBIAR ESTADO</th>
                                     
                                 </tr>
                             </thead>
@@ -158,15 +158,15 @@
                                     <td>{{$compu->fechadesignado}}</td>
                                     <td>{{$compu->cargoresponsable}}</td>
 
-                                    
-                                   @if($compu->condicion=="1")
-                                   <td>
+                                    <td>
+                                         @if($compu->condicion=="1")
                                         <button type="button" class="btn btn-success btn-md">
                                     
                                           <i class="fa fa-check fa-2x"></i> Activo
                                         </button>
 
                                       @else
+                                        
                                          <button type="button" class="btn btn-danger btn-md">
                                     
                                          <i class="fa fa-check fa-2x"></i> Desactivado
@@ -223,13 +223,13 @@
 
                                     @if($compu->condicion)
 
-                                        <button type="button" class="btn btn-danger btn-sm" data-id_categoria="{{$compu->id}}" data-toggle="modal" data-target="#abrirmodalEliminar">
-                                            <i class="fa fa-times fa-2x"></i> Desactivar
+                                        <button type="submit" class="btn btn-danger btn-sm"  name ="btnDesactivar"   data-id_ordenador="{{$compu->id}}" data-toggle="modal" data-target="#abrirmodalEliminar">
+                                            <i class="fa fa-times fa-2x"></i value= "Desactivar"> Desactivar
                                         </button>
 
                                         @else
 
-                                        <button type="button" class="btn btn-success btn-sm" data-id_categoria="{{$compu->id}}" data-toggle="modal" data-target="#abrirmodalEliminar">
+                                        <button type="button" class="btn btn-success btn-sm" data-id_ordenador="{{$compu->id}}" data-toggle="modal" data-target="#abrirmodalEliminar">
                                             <i class="fa fa-lock fa-2x"></i> Activar
                                         </button>
 
@@ -334,13 +334,17 @@
                                 {{csrf_field()}}
 
                                 <input type="hidden" id="id_ordenador" name="id_ordenador" value="">
-                                
-                                <p>¿Estás seguro de cambiar el estado?</p>
-        
 
+                                <p>¿Si está seguro de cambiar el estado describa el por qué ?</p>
+
+                                <form action= "desactivar.blade.php"  >
+                                <input type="text" name="desactivo">
+                               </form >
+                                    
+                                    
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times fa-2x"></i>Cerrar</button>
-                                    <button type="submit" class="btn btn-success"><i class="fa fa-lock fa-2x"></i>Aceptar</button>
+                                    <button type="submit" class="btn btn-success"> <i class="fa fa-lock fa-2x"></i>Aceptar</button>
                                 </div>
 
 
